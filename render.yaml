@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ghouri-lms
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /login
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 8080
